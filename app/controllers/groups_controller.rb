@@ -20,6 +20,8 @@ class GroupsController < ApplicationController
      @group.save
 
        redirect_to groups_path
+     else
+       render :new
    end
 
    def update

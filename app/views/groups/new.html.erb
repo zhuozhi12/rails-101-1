@@ -1,34 +1,8 @@
 <div class="col-md-4 col-md-offset-4">
-    <h2>新增讨论版</h2>
+  <h2>新增讨论版</h2>
 
-    <hr>
-    <%= form_for @group do |f| %>
+  <hr>
 
-    <% if @group.errors.any? %>
-    <ul>
-      <% @group.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-    </ul>
-    <% end %>
-
-    标题
-    <%= f.text_field :title %>
-    <br>
-    叙述
-    <br>
-    <%= f.text_area :description %>
-    <br>
-
-    <%= f.submit "Submit", :disable_with => 'Submiting...' %>
-    <% end %>
+  <%= render "form" %>
 
 </div>
-def update
-    @group = Group.find(params[:id])
-    if @group.update(group_params)
-      redirect_to groups_path, notice: "Update Success"
-    else
-      render :edit
-    end
-  end 

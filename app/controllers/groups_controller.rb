@@ -11,9 +11,9 @@ class GroupsController < ApplicationController
      @group = Group.find(params[:id])
     end
 
-  def new
-    @group = Group.new
-  end
+    def new
+      @group = Group.new
+    end
 
   def create
     @group = Group.new(group_params)
@@ -30,7 +30,7 @@ class GroupsController < ApplicationController
       redirect_to groups_path, notice: "Update Success"
     else
       render :edit
-    end 
+    end
   end
 
      def destroy

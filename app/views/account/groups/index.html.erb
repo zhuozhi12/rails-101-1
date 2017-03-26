@@ -1,6 +1,9 @@
 <h2 class="text-center"> 我加入的讨论版 </h2>
 
   <table class="table">
+    <% if current_user && current_user == @group.user %>
+      <%= link_to("Edit", edit_group_path(@group), class: "btn btn-primary pull-right")%>
+    <% end %>
     <thead>
       <tr>
         <th> # </th>
